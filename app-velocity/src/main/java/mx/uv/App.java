@@ -41,16 +41,6 @@ public class App {
 
         before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
 
-        // tiene prevalencia el mapeo estático de forma que
-        // si tenemos un index.html, este se va a cargar primero que
-        // el mapeo a la raíz "/"
-        // get("/", (req, res) -> {
-        // return "respuesta";
-        // });
-
-        // se agrega esta forma de envio de la página estática
-        // debido a que cuando hacemos el deployment (jar) el statiFiles.location ya no
-        // surte efecto
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             return new VelocityTemplateEngine().render(new ModelAndView(model, "index.html"));
@@ -101,6 +91,6 @@ public class App {
         if (processBuilder.environment().get("PORT") != null) {
             return Integer.parseInt(processBuilder.environment().get("PORT"));
         }
-        return 4567; // return default port if heroku-port isn't set (i.e. on localhost)
+        return 4567; 
     }
 }
