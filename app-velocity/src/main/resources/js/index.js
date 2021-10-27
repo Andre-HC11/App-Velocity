@@ -3,7 +3,7 @@ var id;
 
 var btnEnviar = document.getElementById("btnEnviar");
 btnEnviar.addEventListener("click", () => {
-    axios.post("https://app-heroku.herokuapp.com/enviar", {
+    axios.post("https://app-velocity.herokuapp.com/enviar", {
             email: document.getElementById("email").value,
             password: document.getElementById("password").value
         })
