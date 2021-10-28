@@ -3,7 +3,7 @@ var id;
 
 var btnEnviar = document.getElementById("btnEnviar");
 btnEnviar.addEventListener("click", () => {
-    axios.post("https://app-herokup.herokuapp.com/enviar", {
+    axios.post("https://shrouded-dawn-54283.herokuapp.com/enviar", {
             email: document.getElementById("email").value,
             password: document.getElementById("password").value
         })
